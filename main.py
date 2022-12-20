@@ -26,16 +26,20 @@ def opcion_tijeras(player, bot):
 
 
 print("Escribe 'piedra', 'papel' o 'tijeras' para empezar a jugar. Si quieres salir escribe 'salir': ")
-jugador = input()
-maquina = random.choice(["piedra", "papel", "tijeras"])
+jugador = input("Elijo: ")
 puntos_jugador = 0
 puntos_maquina = 0
 
 
-# while jugador != "salir":
-#     if jugador == "piedra":
-#         print(opcion_piedra)
-#     elif jugador == "papel":
-#         print(opcion_papel)
-#     elif jugador == "tijeras":
-#         print(opcion_tijeras)
+while jugador != "salir":
+    maquina = random.choice(["piedra", "papel", "tijeras"])
+    if jugador == "piedra":
+        print(f"Tu rival elige: {maquina}")
+        print(opcion_piedra(jugador, maquina))
+    elif jugador == "papel":
+        print(f"Tu rival elige: {maquina}")
+        print(opcion_papel(jugador, maquina))
+    elif jugador == "tijeras":
+        print(f"Tu rival elige: {maquina}")
+        print(opcion_tijeras(jugador, maquina))
+    jugador = input(f"Si quieres seguir jugando vuelve a probar: ")
